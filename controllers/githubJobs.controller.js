@@ -65,6 +65,7 @@ controller.selectLocation = location => {
         existentLocation.checked = true;
     }
 }
+controller.getSelectedLocation = () => controller.jobLocations.find(location => location.selected);
 controller.addLocation = location => {
     if(location){
         let jobLocations = document.querySelector('[data-component="job-locations"]');
