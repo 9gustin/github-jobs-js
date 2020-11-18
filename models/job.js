@@ -30,4 +30,7 @@ export default class Job {
     get title(){
         return this.#title;
     }
+    get location(){
+        return this.#location;
+    }
 }

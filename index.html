@@ -6,9 +6,17 @@
     <title>Github Jobs | JS</title>
 </head>
 <body>
-    <input type="checkbox" data-component="fulltime-check"></input>
-    <input type="text" data-component="location-search"></input>
-    <ul data-component="job-locations"></ul>
+    <form data-component="form-search">
+        <input type="text" data-component="text-search"></input>
+        <input type="checkbox" data-component="fulltime-check"></input>
+        <input type="text" data-component="location-search"></input>
+        <ul data-component="job-locations"></ul>
+        <input type="submit">
+    </form>
+    <ul data-component="job-list">
+
+    </ul>
+
 
 
     <script src="./controllers/githubJobs.controller.js" type="module"></script>
