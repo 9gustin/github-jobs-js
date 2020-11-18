@@ -1,12 +1,11 @@
 export default class Location {
-    #name;
+    name;
+    selected;
+
     constructor(config){
         if(config){
-            this.#name = config.name;
+            this.name = config.name;
+            this.selected = config.selected;
         }
-    }
-
-    get name(){
-        return this.#name;
     }
 }
