@@ -46,7 +46,7 @@ export default class Job {
         const date2 = new Date(this.#createdAt);
         const diffTime = Math.abs(date2 - date1);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        console.log(diffDays + " days");
+
         return `${diffDays} Days Ago`;
     }
 }

@@ -37,7 +37,6 @@ controller.makeLocationComponent = location => {
     radioBtn.onchange = (e) => {
         e.preventDefault();
         controller.handleChangeLocation(location);
-        console.log(controller.jobLocations)
     }
 
     let label = document.createElement('label');
