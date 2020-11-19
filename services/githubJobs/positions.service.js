@@ -3,7 +3,6 @@ import Job from '../../models/job.js';
 
 let positionsService = {};
 const getArgs = obj => {
-    console.log(obj);
     let str = '';
 
     Object.keys(obj).forEach(arg => {
