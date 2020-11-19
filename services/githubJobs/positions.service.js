@@ -2,9 +2,24 @@ import githubJobsServiceConfig from './config.js';
 import Job from '../../models/job.js';
 
 let positionsService = {};
+const getArgs = obj => {
+    console.log(obj);
+    let str = '';
 
-positionsService.filter = async ({ search, description, location, lat, long, fullTime }) => {
-    let response = await fetch(`${githubJobsServiceConfig.url}/positions.json?search=${search}&description=${description || ''}&location=${location || ''}&lat=${lat || ''}&long=${long || ''}&full_time=${fullTime}`);
+    Object.keys(obj).forEach(arg => {
+        if(!obj[arg]) return;
+        if(str !== '') str = `${str}&`;
+
+        let val = typeof obj[arg] === 'string' ? obj[arg].replace(' ', '+') : obj[arg];
+
+        str = `${str}${arg}=${val}`;
+    });
+
+    return str;
+}
+
+positionsService.filter = async ({ search, description, location, lat, long, full_time }) => {
+    let response = await fetch(`${githubJobsServiceConfig.url}/positions.json?${getArgs({ search, description, location, lat, long, full_time })}`);
 
     if(response.status === 200){
         let jsonResponse = await response.json();

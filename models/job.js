@@ -9,8 +9,8 @@ export default class Job {
     #description;
     #howToApply;
     #companyLogo;
-    constructor(config){
-        if(config){
+    constructor(config) {
+        if (config) {
             this.#id = config.id;
             this.#type = config.type;
             this.#url = config.url;
@@ -27,10 +27,26 @@ export default class Job {
     get id() {
         return this.#id;
     }
-    get title(){
+    get title() {
         return this.#title;
     }
-    get location(){
+    get location() {
         return this.#location;
+    }
+    get companyLogo() {
+        return this.#companyLogo;
+    }
+    get company() {
+        return this.#company;
+    }
+    get type() { return this.#type; }
+    get location() { return this.#location; }
+    get createdAtToString() {
+        const date1 = new Date();
+        const date2 = new Date(this.#createdAt);
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        console.log(diffDays + " days");
+        return `${diffDays} Days Ago`;
     }
 }

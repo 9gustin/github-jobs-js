@@ -27,14 +27,16 @@ controller.initLocations = () => {
     }
 }
 controller.makeLocationComponent = location => {
+
     let radioBtn = document.createElement('input');
-    radioBtn.type = 'radio';
+    radioBtn.classList = 'mr-3 form-radio h-5 w-5';
+    radioBtn.type = 'checkbox';
     radioBtn.id = location.name;
     radioBtn.name = 'LocationComponent';
     if (location.selected) radioBtn.checked = true;
     radioBtn.onchange = (e) => {
         e.preventDefault();
-        controller.selectLocation(location);
+        controller.handleChangeLocation(location);
         console.log(controller.jobLocations)
     }
 
@@ -43,24 +45,27 @@ controller.makeLocationComponent = location => {
     label.htmlFor = location.name;
 
     let li = document.createElement('li');
+    li.classList = 'my-2 flex items-center';
     li.appendChild(radioBtn);
     li.appendChild(label);
 
     return li;
 }
-controller.selectLocation = location => {
-    let existentLocation = document.querySelector(`[name="LocationComponent"][id="${location.name}"]`);
-    if (existentLocation) {
-        let selectedLocation = document.querySelector('[name="LocationComponent"]:checked');
-        if (selectedLocation) selectedLocation.checked = false;
+controller.handleChangeLocation = location => {
 
-        controller.jobLocations = controller.jobLocations.map(l => {
-            if (l.name === location.name) l.selected = true;
-            else l.selected = false;
-            return l;
-        })
-        existentLocation.checked = true;
-    }
+    let locations = document.querySelectorAll('[name="LocationComponent"]');
+    locations.forEach(lComponent => {
+        if (lComponent.id === location.name) {
+            controller.jobLocations = controller.jobLocations.map(l => {
+                if (l.name === location.name) l.selected = lComponent.checked || false;
+                else l.selected = false;
+                return l;
+            })
+        }
+        else {
+            lComponent.checked = false
+        }
+    });
 }
 controller.getSelectedLocation = () => controller.jobLocations.find(location => location.selected);
 
@@ -92,13 +97,64 @@ controller.renderJobs = () => {
 
 }
 controller.makeJobComponent = job => {
-    let label = document.createElement('label');
-    label.textContent = job.title;
+    let imgDiv = document.createElement('div');
+    imgDiv.classList = 'w-28 h-28 flex justify-center p-1';
+
+    if (job.companyLogo) {
+        let img = document.createElement('img');
+        img.classList = 'object-contain  rounded';
+        img.src = job.companyLogo;
+        imgDiv.appendChild(img);
+    }
+
+    let company = document.createElement('strong');
+    company.classList = 'my-3';
+    company.textContent = job.company;
+
+    let jobTitle = document.createElement('h5');
+    jobTitle.classList = 'text-base mt-2 mb-4';
+    jobTitle.textContent = job.title;
+
+    let jobType = document.createElement('span');
+    jobType.classList = 'rounded px-2 py-1 mt-2 border-solid border-blue-800 border-2 text-xs font-bold';
+    jobType.textContent = job.type;
+
+    let locationIcon = document.createElement('i');
+    locationIcon.classList = 'material-icons mr-1';
+    locationIcon.textContent = 'public';
+
+    let location = document.createElement('span');
+    location.classList = 'text-gray-400 flex items-center my-4 mr-4 text-xs';
+    location.appendChild(locationIcon);
+    location.append(job.location);
+
+    let clockIcon = document.createElement('i');
+    clockIcon.classList = 'material-icons mr-1';
+    clockIcon.textContent = 'access_time';
+
+    let createdAt = document.createElement('span');
+    createdAt.classList = 'text-gray-400 flex items-center my-4 mr-4 text-xs';
+    createdAt.appendChild(clockIcon);
+    createdAt.append(job.createdAtToString);
+
+    let divInfoAbout = document.createElement('div');
+    divInfoAbout.classList = 'flex justify-end';
+    divInfoAbout.appendChild(location);
+    divInfoAbout.appendChild(createdAt);
+
+    let infoDiv = document.createElement('div');
+    infoDiv.classList = 'text-xs w-3/4 lg:w-11/12 pl-2';
+    infoDiv.appendChild(company);
+    infoDiv.appendChild(jobTitle);
+    infoDiv.appendChild(jobType);
+    infoDiv.appendChild(divInfoAbout);
 
     let li = document.createElement('li');
+    li.classList = 'bg-white rounded overflow-hidden shadow-lg p-2 flex my-6';
     li.setAttribute("data-component", "job");
     li.setAttribute("data-id", job.id);
-    li.appendChild(label);
+    li.appendChild(imgDiv);
+    li.appendChild(infoDiv);
 
     return li;
 }
@@ -109,17 +165,18 @@ controller.getFilters = () => {
     filters.search = document.querySelector('[data-component="text-search"]').value;
 
     let locationName = document.querySelector('[data-component="location-search"]').value;
-    if (locationName === '') locationName = controller.getSelectedLocation().name;
+    if (locationName === '') locationName = controller.getSelectedLocation()?.name;
 
     filters.location = locationName;
 
-    filters.fullTime = document.querySelector('[data-component="fulltime-check"]').checked;
+    filters.full_time = document.querySelector('[data-component="fulltime-check"]').checked;
 
     return filters;
 }
 controller.search = async () => {
     let jobs = await positionsService.filter(controller.getFilters());
 
+    if (!jobs) jobs = [];
     if (jobs) {
         controller.jobs = jobs;
         controller.renderJobs(jobs);
