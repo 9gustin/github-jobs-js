@@ -1,5 +1,5 @@
 const githubJobsServiceConfig = {
-    url: 'https://jobs.github.com'
+    url: 'https://cors-anywhere.herokuapp.com/https://jobs.github.com'
 };
 
 export default githubJobsServiceConfig;
