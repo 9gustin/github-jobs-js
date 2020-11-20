@@ -2,7 +2,7 @@
 
 challenge: https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps
 
-published at https://9gustin.github.io/github-jobs-js/index.html
+published at https://9gustin.github.io/github-jobs-js/public/index.html
 
 User stories:
 1. [READY] User story: I can see a list of jobs in a city by default
