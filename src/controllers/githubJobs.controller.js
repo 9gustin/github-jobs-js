@@ -1,3 +1,5 @@
+const ENV = 'production';
+
 import positionsService from '../services/githubJobs/positions.service.js';
 import Location from '../models/location.js';
 
@@ -149,7 +151,7 @@ controller.makeJobComponent = job => {
     infoDiv.appendChild(divInfoAbout);
 
     let link = document.createElement('a');
-    link.href = `/public/job/?id=${job.id}`;
+    link.href = `${ENV === 'production' ? '/github-jobs-js' : ''}/public/job/?id=${job.id}`;
     link.classList = 'flex overflow-hidden';
     link.appendChild(imgDiv);
     link.appendChild(infoDiv);
