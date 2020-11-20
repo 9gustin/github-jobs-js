@@ -23,7 +23,8 @@ export default class Job {
             this.#companyLogo = config.companyLogo || config.company_logo;
         }
     }
-
+    get howToApply() { return this.#howToApply; }
+    get description() { return this.#description; }
     get id() {
         return this.#id;
     }

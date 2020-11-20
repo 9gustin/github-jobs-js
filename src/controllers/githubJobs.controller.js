@@ -148,12 +148,17 @@ controller.makeJobComponent = job => {
     infoDiv.appendChild(jobType);
     infoDiv.appendChild(divInfoAbout);
 
+    let link = document.createElement('a');
+    link.href = `/public/job/?id=${job.id}`;
+    link.classList = 'flex overflow-hidden';
+    link.appendChild(imgDiv);
+    link.appendChild(infoDiv);
+
     let li = document.createElement('li');
-    li.classList = 'bg-white rounded overflow-hidden shadow-lg p-2 flex my-6';
+    li.classList = 'bg-white rounded shadow-lg p-2 my-6';
     li.setAttribute("data-component", "job");
     li.setAttribute("data-id", job.id);
-    li.appendChild(imgDiv);
-    li.appendChild(infoDiv);
+    li.appendChild(link);
 
     return li;
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Info -->
+    <title>Job | Github Jobs | JS</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+    <!-- Tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+
+    <!--Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="text-blue-900 h-full container mx-auto px-4 md:px-0 bg-gray-100">
+    <header class="py-6">
+        <h1 class="text-xl">
+            <strong class="title-font">Github</strong>
+            <span class="title-font">jobs</span>
+        </h1>
+    </header>
+    <main>
+        <div class="block md:flex">
+            <aside class="w-full md:w-1/4">
+                <a class="cursor-pointer text-blue-500 flex items-center text-sm font-medium mb-8" onclick="javascript:window.history.back();">
+                    <span class="material-icons mr-2">
+                        keyboard_backspace
+                    </span>
+                    Back to search
+                </a>
+                <h6 class="title-font text-gray-400 mb-3">HOW TO APPLY</h6>
+                <p class="font-medium" data-component="howToApply"></p>
+            </aside>
+            <div class="w-full md:w-3/4 md:pl-10 pt-6 md:pt-0 mb-10">
+                <h2 class="font-bold text-lg md:text-3xl title-font md:flex md:items-center">
+                    <span class="block md:inline" data-component="title"></span>
+                    <span class="mt-2 md:mt-0 md:ml-3 rounded px-2 py-1 border-solid border-blue-900 text-blue-900 border-2 text-xs font-bold" data-component="type"></span>
+                </h2>
+                <span class="text-gray-400 flex items-center my-2 mr-4 text-xs" data-component="createdAtToString"><i class="material-icons mr-2">access_time</i></span>
+                <div class="my-8 flex">
+                    <div class="w-16 h-16 flex justify-center p-1">
+                        <img src=""
+                        alt="" class="object-fill rounded" data-component="companyLogo">
+                    </div>
+                    <div class="ml-3 text-lg">
+                        <strong data-component="company"></strong>
+                        <span class="text-gray-400 mt-2 flex items-center text-xs" data-component="location"><i
+                                class="material-icons mr-2">public</i> </span>
+                    </div>
+
+                </div>
+                <p data-component="description"></p>
+            </div>
+        </div>
+    </main>
+    <!-- <footer class="relative lg:absolute bottom-0 left-0 right-0 text-center py-4">
+        <p class="text-gray-400 title-font">
+            9gustin @ DevChallenges.io
+        </p>
+    </footer> -->
+    <script src="../../src/controllers/job.controller.js" type="module"></script>
+</body>
+</html>
