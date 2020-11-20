@@ -11,7 +11,7 @@ User stories:
 4. [READY] User story: I can select one option from at least 4 pre-defined options
 5. [READY] User story: I can search for a full-time job only
 6. [READY] User story: I can see a list of jobs with their logo, company name, location, and posted time.
-7. User story: When I select a job, I can see job descriptions and how to apply like the given design.
-8. User story: When I am on the job details page, I can go back to the search page
+7. [READY] User story: When I select a job, I can see job descriptions and how to apply like the given design.
+8. [READY] User story: When I am on the job details page, I can go back to the search page
 9. User story (optional): I can see a list of jobs in the closest city from my location by default
 10. User story (optional): I can see jobs in different pages, 5 items each page
