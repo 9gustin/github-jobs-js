@@ -44,7 +44,7 @@ controller.makeLocationComponent = location => {
     label.htmlFor = location.name;
 
     let li = document.createElement('li');
-    li.classList = 'my-2 flex items-center';
+    li.classList = 'my-2 flex items-center font-medium';
     li.appendChild(radioBtn);
     li.appendChild(label);
 
@@ -115,7 +115,7 @@ controller.makeJobComponent = job => {
     jobTitle.textContent = job.title;
 
     let jobType = document.createElement('span');
-    jobType.classList = 'rounded px-2 py-1 mt-2 border-solid border-blue-800 border-2 text-xs font-bold';
+    jobType.classList = 'rounded px-2 py-1 mt-2 border-solid border-blue-900 border-2 text-xs font-bold';
     jobType.textContent = job.type;
 
     let locationIcon = document.createElement('i');
