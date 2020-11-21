@@ -1,0 +1,28 @@
+* {
+  font-family: "Roboto";
+}
+
+.title-font {
+  font-family: "Poppins";
+}
+
+.search-div {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.search-div img {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;

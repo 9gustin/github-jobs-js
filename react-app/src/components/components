@@ -1,0 +1,19 @@
+header
+    navbar
+
+main 
+    formBuscador
+        img
+        input
+        button
+    div 
+        aside
+            inputGroup
+            input
+            ulItems
+                Item (inputGroup) 
+        div
+            Listado
+                ItemJob
+footer
+    p
