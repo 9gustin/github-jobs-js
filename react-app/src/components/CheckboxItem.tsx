@@ -1,10 +1,13 @@
 import React from 'react';
+import Checkbox from './Checkbox';
+import Label from './Label';
 
-const CheckboxItem = () => {
+const CheckboxItem = (props: {id:string, text: string}) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Checkbox id={props.id}/>
+            <Label htmlFor={props.id} text={props.text}/> 
+        </>
     );
 };
 
