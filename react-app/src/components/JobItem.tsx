@@ -2,7 +2,7 @@ import React from 'react';
 import IconLocation from './IconLocation';
 import IconTime from './IconTime';
 
-const JobItem = () => {
+const JobItem = (): JSX.Element => {
     return (
 
         <a className="flex overflow-hidden">

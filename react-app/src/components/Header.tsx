@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (): JSX.Element => {
     return (
         <header className="py-6">
             <h1 className="text-xl">

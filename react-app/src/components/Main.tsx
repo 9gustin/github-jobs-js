@@ -3,7 +3,7 @@ import FormBusqueda from './FormBusqueda';
 import JobFilters from './JobFilters';
 import JobsList from './JobsList';
 
-const Main = () => {
+const Main = (): JSX.Element => {
     return (
         <main className="mb-10">
             <FormBusqueda/>

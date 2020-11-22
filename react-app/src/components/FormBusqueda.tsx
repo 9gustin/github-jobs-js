@@ -5,7 +5,7 @@ import Button from './Button';
 import IconWork from './IconWork';
 import Input from './Input';
 
-const FormBusqueda = () => {
+const FormBusqueda = (): JSX.Element => {
     return (
         <form data-component="form-search" className="h-32 search-div rounded-xl flex justify-center items-center">
             <img src={backgroundImg} alt="" className="object-contain hidden lg:block"/>

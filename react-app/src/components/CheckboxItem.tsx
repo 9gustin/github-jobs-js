@@ -2,7 +2,7 @@ import React from 'react';
 import Checkbox from './Checkbox';
 import Label from './Label';
 
-const CheckboxItem = (props: {id:string, text: string}) => {
+const CheckboxItem = (props: {id:string, text: string}) : JSX.Element => {
     return (
         <>
             <Checkbox id={props.id}/>
