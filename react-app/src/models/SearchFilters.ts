@@ -1,5 +1,5 @@
 export default interface SearchFilters{
-    text: string,
+    search: string,
     location: string,
     fullTime: boolean
 }
