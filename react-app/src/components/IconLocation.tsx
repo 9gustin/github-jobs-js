@@ -1,9 +1,12 @@
 import React from 'react';
 import { MdPublic } from 'react-icons/md';
 
-const IconLocation = (props:{className?:string}): JSX.Element => {
+interface Props{
+    className?:string
+}
+const IconLocation: React.FC<Props> = ({className}) => {
     return (
-        <MdPublic className={`text-gray-400 ${props.className}`}/>
+        <MdPublic className={`text-gray-400 ${className}`}/>
     );
 };
 

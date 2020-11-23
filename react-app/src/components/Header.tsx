@@ -1,6 +1,6 @@
 import React from 'react';
-
-const Header = (): JSX.Element => {
+interface Props {}
+const Header: React.FC<Props> = () => {
     return (
         <header className="py-6">
             <h1 className="text-xl">

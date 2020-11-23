@@ -1,12 +1,14 @@
 import React, { ReactNode } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-
-const Layout = (props:{children:ReactNode}): JSX.Element => {
+interface Props {
+    children:ReactNode
+}
+const Layout: React.FC<Props> =({children}) => {
     return (
         <>
             <Header/>
-            {props.children}
+            {children}
             <Footer/>
         </>
     );

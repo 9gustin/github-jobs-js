@@ -1,9 +1,13 @@
 import React from 'react';
 import { MdAccessTime } from 'react-icons/md';
 
-const IconTime = (props:{className?:string}): JSX.Element => {
+interface Props{
+    className?:string
+}
+
+const IconTime: React.FC<Props> = ({className}) => {
     return (
-        <MdAccessTime className={`text-gray-400 ${props.className}`}/>
+        <MdAccessTime className={`text-gray-400 ${className}`}/>
     );
 };
 

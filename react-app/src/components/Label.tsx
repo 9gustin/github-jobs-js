@@ -1,8 +1,10 @@
 import React from 'react';
-
-const Label = (props: { text: string, htmlFor: string }): JSX.Element => {
+interface Props {
+    text: string, htmlFor: string
+}
+const Label:React.FC<Props> = ({text, htmlFor}) => {
     return (
-        <label htmlFor={props.htmlFor}>{props.text}</label>
+        <label htmlFor={htmlFor}>{text}</label>
     );
 };
 

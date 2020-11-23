@@ -2,7 +2,9 @@ import React from 'react';
 import CheckboxItem from './CheckboxItem';
 import IconLocation from './IconLocation';
 
-const JobFilters = (): JSX.Element => {
+interface Props {}
+
+const JobFilters: React.FC<Props> = () => {
     return (
         <aside className="w-full md:w-1/4">
             <div className="mb-4 font-medium flex items-center">
