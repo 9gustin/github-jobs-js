@@ -1,3 +1,5 @@
+import StringNormalizer from "../utils/StringNormalizer";
+
 export default class Job {
     private _id:string = '';
     private _type:string = '';
@@ -52,5 +54,8 @@ export default class Job {
         }
 
         return '';
+    }
+    get publicUrl(){
+        return`/job/${StringNormalizer(this.company)}/${StringNormalizer(this.title)}`;
     }
 }

@@ -1,5 +1,6 @@
 import githubJobsServiceConfig from './config.json';
-import Job from '../../models/Job';
+import Job from '../../models/Job'
+import StringNormalizer from '../../utils/StringNormalizer';
 
 const getArgs = (obj: any): string => {
     let str = '';
@@ -8,7 +9,7 @@ const getArgs = (obj: any): string => {
         if (!obj[arg]) return;
         if (str !== '') str = `${str}&`;
 
-        let val = typeof obj[arg] === 'string' ? obj[arg].replace(' ', '+') : obj[arg];
+        let val = typeof obj[arg] === 'string' ? StringNormalizer(obj[arg]) : obj[arg];
 
         str = `${str}${arg}=${val}`;
     });
