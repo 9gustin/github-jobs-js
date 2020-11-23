@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
-import Job from '../../pages/Job';
 import JobContext from './JobContext';
+import {filter} from '../../services/githubJobs/PositionsService';
+import Job from '../../models/Job';
 
 interface Props {
     children: ReactNode
@@ -11,12 +12,17 @@ interface SearchProps {
     fullTime: boolean
 }
 
-const JobProvider = ({ children }: Props) => {
-    const [jobs, setJobs] = useState(Job);
+const JobProvider = ({ children }: Props):JSX.Element => {
+    const [jobs, setJobs] = useState<Job[] | null>(null);
 
     const searchJobs = ({ text, location, fullTime }: SearchProps) => {
         
     }
+
+    useEffect(() => {
+        filter({})
+        .then(res => setJobs(res))
+    }, [])
 
     return (
         <JobContext.Provider value={{ jobs, searchJobs }}>

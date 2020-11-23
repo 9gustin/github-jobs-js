@@ -29,7 +29,7 @@ export default class Job {
         return this._id;
     }
     get title() {
-        return this._title;
+        return this._title || '';
     }
     get location() {
         return this._location;
@@ -38,18 +38,18 @@ export default class Job {
         return this._companyLogo;
     }
     get company() {
-        return this._company;
+        return this._company || '';
     }
     get type() { return this._type; }
     get createdAtToString():string {
-        // if(this._createdAt){
-        //     const date1 = new Date();
-        //     const date2 = new Date(this._createdAt);
-        //     const diffTime = Math.abs(date2 - date1);
-        //     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if(this._createdAt){
+            const date1 = new Date();
+            const date2 = new Date(this._createdAt);
+            var difference = date1.getTime() - date2.getTime();
+            var days = Math.ceil(difference / (1000 * 3600 * 24));
     
-        //     return `${diffDays} days ago`;
-        // }
+            return `${days} days ago`;
+        }
 
         return '';
     }

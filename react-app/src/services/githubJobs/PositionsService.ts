@@ -17,12 +17,12 @@ const getArgs = (obj: any): string => {
 }
 
 interface FilterProps {
-    search: string,
-    description: string,
-    location: string, 
-    lat: string, 
-    long: string, 
-    full_time: boolean
+    search?: string,
+    description?: string,
+    location?: string, 
+    lat?: string, 
+    long?: string, 
+    full_time?: boolean
 }
 
 const filter = async ({ search, description, location, lat, long, full_time }: FilterProps):Promise<Job[]> => {
@@ -49,7 +49,7 @@ const getById = async (id:string) => {
     return false;
 }
 
-export default {
+export {
     getById,
     filter
 };
