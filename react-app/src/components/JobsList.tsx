@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import JobContext from '../context/jobs/JobContext';
+import JobContext from '../context/job/JobContext';
 import Job from '../models/Job';
 import JobItem from './JobItem';
 
