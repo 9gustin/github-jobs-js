@@ -8,7 +8,7 @@ const JobsList: React.FC<Props> = (): JSX.Element => {
     const { jobs } : {jobs:(Job[] | null)}= useContext(JobContext);
 
     return (
-        <ul data-component="job-list" className="w-full md:w-3/4 pl-2 md:pl-10">
+        <ul data-component="job-list" className="w-full">
             {
                 jobs && jobs.map(job => (
                     <li key={`LiItem-${job.id}`} className="bg-white rounded shadow-lg p-2 my-6">

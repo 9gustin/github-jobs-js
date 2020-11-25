@@ -7,7 +7,8 @@ interface StateType {
     searchJobs?: Function,
     setLocation?: Function,
     setSearch?: Function
-    setFullTime?: Function
+    setFullTime?: Function,
+    getOne?: Function
 }
 const initialProps:StateType = {jobs: []};
 

@@ -1,26 +1,13 @@
-import React, { useContext } from 'react';
-import JobContext from '../context/job/JobContext';
+import React, { ReactNode } from 'react';
 import JobProvider from '../context/job/JobProvider';
-import LocationProvider from '../context/location/LocationProvider';
-import FormBusqueda from './FormBusqueda';
-import JobFilters from './JobFilters';
-import JobsList from './JobsList';
 
-interface Props { }
+interface Props { children: ReactNode }
 
-const Main: React.FC<Props> = () => {
+const Main: React.FC<Props> = ({ children }) => {
     return (
-        <JobProvider>
-            <main className="mb-10">
-                <FormBusqueda />
-                <div className="pt-6 block md:flex">
-                    <LocationProvider>
-                        <JobFilters />
-                    </LocationProvider>
-                    <JobsList />
-                </div>
-            </main>
-        </JobProvider>
+        <main className="mb-10">
+            {children}
+        </main>
     );
 };
 

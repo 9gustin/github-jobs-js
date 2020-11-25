@@ -1,3 +1,5 @@
+
+index.html
 header
     navbar
 
@@ -17,3 +19,18 @@ main
                 ItemJob
 footer
     p
+
+job.html
+<header>
+    mainJob
+        aside
+            backLink
+            how to apply 
+        div
+            jobTitle
+            time
+            jobImg
+            companyInfo
+
+            description
+<footer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
-import Job from '../pages/Job';
+import JobView from '../pages/JobView';
 import NotFound from '../pages/NotFound';
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route path="/job/:id" component={Job}/>
+                <Route path="/job/:company/:title/:id" component={JobView}/>
                 <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>

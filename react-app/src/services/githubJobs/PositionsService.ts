@@ -37,8 +37,8 @@ const filter = async ({ search, description, location, lat, long, full_time }: F
     return [];
 }
 
-const getById = async (id:string) => {
-    if (!id || id === '') return false;
+const getById = async (id:string):Promise<Job | null> => {
+    if (!id || id === '') return null;
 
     let response = await fetch(`${githubJobsServiceConfig.url}/positions/${id}.json`);
 
@@ -47,7 +47,7 @@ const getById = async (id:string) => {
         if (jsonResponse) return new Job(jsonResponse);
     }
 
-    return false;
+    return null;
 }
 
 export {

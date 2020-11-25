@@ -56,6 +56,6 @@ export default class Job {
         return '';
     }
     get publicUrl(){
-        return`/job/${StringNormalizer(this.company)}/${StringNormalizer(this.title)}`;
+        return`/job/${StringNormalizer(this.company)}/${StringNormalizer(this.title)}/${StringNormalizer(this.id)}`;
     }
 }
