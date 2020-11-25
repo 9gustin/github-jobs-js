@@ -4,7 +4,6 @@ challenge: https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps
 
 published at:
 - Vainilla JS: https://9gustin.github.io/github-jobs-js/vainilla-app/public/index.html
-- React JS: ...
 
 User stories:
 1. [READY] User story: I can see a list of jobs in a city by default
