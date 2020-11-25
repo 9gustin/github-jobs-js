@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd react-app && npm run start",
-    "start": "cd react-app && npm run build"
+    "build": "cd react-app && npm run build"
   },
   "repository": {
     "type": "git",
