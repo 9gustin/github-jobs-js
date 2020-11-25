@@ -151,7 +151,7 @@ controller.makeJobComponent = job => {
     infoDiv.appendChild(divInfoAbout);
 
     let link = document.createElement('a');
-    link.href = `${ENV === 'production' ? '/github-jobs-js' : ''}/public/job/?id=${job.id}`;
+    link.href = `${ENV === 'production' ? '/github-jobs-js' : ''}/vainilla-app/public/job/?id=${job.id}`;
     link.classList = 'flex overflow-hidden';
     link.appendChild(imgDiv);
     link.appendChild(infoDiv);
