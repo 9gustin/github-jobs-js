@@ -1,4 +1,4 @@
-import React, { ChangeEvent, RefObject } from 'react';
+import React, { RefObject } from 'react';
 interface Props {
     placeholder:string,
     reference: RefObject<HTMLInputElement>,
