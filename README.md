@@ -16,3 +16,9 @@ User stories:
 8. [READY] User story: When I am on the job details page, I can go back to the search page
 9. User story (optional): I can see a list of jobs in the closest city from my location by default
 10. User story (optional): I can see jobs in different pages, 5 items each page
+
+#### To practice
+- TailwindCSS
+- Typescript
+- Context/Reducer
+- React Router Dom
