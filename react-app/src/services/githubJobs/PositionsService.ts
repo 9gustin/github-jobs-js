@@ -46,7 +46,6 @@ const getById = async (id: string): Promise<Job | null> => {
     if (!id || id === '') return null;
 
     let response: ApiOkResponse<Job[]> | ApiErrorResponse<Job[]> = await httpClient.get(`/positions/${id}.json`);
-    console.log("🚀 ~ file: PositionsService.ts ~ line 49 ~ getById ~ response", response)
 
     if (response.ok) {
         return new Job(response.data);
