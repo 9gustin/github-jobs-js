@@ -1,7 +1,7 @@
 import githubJobsServiceConfig from './config.json';
 import Job from '../../models/Job'
 import StringNormalizer from '../../utils/StringNormalizer';
-import { ApiErrorResponse, ApiOkResponse, ApiResponse, create } from 'apisauce'
+import { ApiErrorResponse, ApiOkResponse, create } from 'apisauce'
 
 const httpClient = create({
     baseURL: githubJobsServiceConfig.url,
